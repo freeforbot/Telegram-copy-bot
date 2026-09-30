@@ -345,8 +345,8 @@ def format_caption(plain_text: str, is_manual: bool = False, my_brand: str = "")
     
     final_text = '\n'.join(formatted_lines)
     
-    # Auto-append the brand if not manual and missing
-    if not is_manual and my_brand and my_brand.lower() not in final_text.lower():
+    # Auto-append the brand if missing
+    if my_brand and my_brand.lower() not in final_text.lower():
         final_text = final_text.rstrip() + f"\n\n{my_brand}"
         
     return final_text
